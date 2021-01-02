@@ -1,35 +1,27 @@
 package com.platzi.market.domain.service;
 
-
+import com.platzi.market.domain.Purchase;
 import com.platzi.market.domain.repository.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PurchaseService {
     @Autowired
     private PurchaseRepository purchaseRepository;
 
-    public List<Product> getAll(){
-        return productRepository.getAll();
+    public List<Purchase> getAll() {
+        return purchaseRepository.getAll();
     }
 
-    public Optional<Product> getProduct(int productId){
-        return productRepository.getProduct(productId);
+    public Optional<List<Purchase>> getByClient(String clientId) {
+        return purchaseRepository.getByClient(clientId);
     }
 
-    public Optional<List<Product>> getByCategory(int categoryId){
-        return productRepository.getByCategory(categoryId);
-    }
-
-    public Product save(Product product){
-        return productRepository.save(product);
-    }
-
-    public boolean delete(int productId){
-        return getProduct(productId).map(product -> {
-            return true;
-        }).orElse(false);
+    public Purchase save(Purchase purchase) {
+        return purchaseRepository.save(purchase);
     }
 }

@@ -1,5 +1,6 @@
 package com.platzi.market.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,9 +15,6 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compra")
     private Integer idCompra;
-
-    @Column(name = "nombre")
-    private String nombre;
 
     @Column(name = "id_cliente")
     private String idCliente;
@@ -46,14 +44,6 @@ public class Compra {
 
     public void setIdCompra(Integer idCompra) {
         this.idCompra = idCompra;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getIdCliente() {

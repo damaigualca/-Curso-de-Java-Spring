@@ -33,6 +33,10 @@ public class Producto {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
     public Integer getIdProducto() {
         return idProducto;
     }
@@ -97,19 +101,5 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public List<ComprasProducto> getComprasProductos() {
-        return comprasProductos;
-    }
-
-    public void setComprasProductos(List<ComprasProducto> comprasProductos) {
-        this.comprasProductos = comprasProductos;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
-    private Categoria categoria;
-
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> comprasProductos;
 
 }

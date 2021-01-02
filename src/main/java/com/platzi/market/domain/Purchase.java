@@ -1,7 +1,5 @@
 package com.platzi.market.domain;
 
-import org.apache.tomcat.jni.Local;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,7 +7,7 @@ public class Purchase {
     private int purchaseId;
     private String clientId;
     private LocalDateTime date;
-    private String payMethod;
+    private String paymentMethod;
     private String comment;
     private String state;
     private List<PurchaseItem> items;
@@ -38,12 +36,12 @@ public class Purchase {
         this.date = date;
     }
 
-    public String getPayMethod() {
-        return payMethod;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setPayMethod(String payMethod) {
-        this.payMethod = payMethod;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public String getComment() {

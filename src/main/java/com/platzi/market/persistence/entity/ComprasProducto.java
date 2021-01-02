@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "compras_producto")
+@Table(name = "compras_productos")
 public class ComprasProducto {
 
     @EmbeddedId
